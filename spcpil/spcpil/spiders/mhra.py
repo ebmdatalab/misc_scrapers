@@ -39,7 +39,7 @@ class MhraSpider(scrapy.Spider):
         for leaflet in response.xpath('//ul[@class="searchResults"]//a[contains(@href, ".pdf")]'):
             href = leaflet.xpath('@href').extract_first()
             name = unicodedata.normalize("NFKD", leaflet.xpath('text()').extract_first()).strip()
-            doc_type = 'SPC' in name or 'PIL'
+            doc_type = 'spc' in name.lower() and 'SPC' or 'PIL'
             if doc_type == 'SPC':
                 seen_spc = True
             if doc_type == 'PIL':
