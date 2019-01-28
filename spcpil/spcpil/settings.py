@@ -31,6 +31,4 @@ ITEM_PIPELINES = {
 FILES_STORE = 'gs://ebmdatalab/spcpil/'
 GCS_PROJECT_ID = 'ebmdatalab'
 CLOSESPIDER_ITEMCOUNT = 10
-FEED_EXPORTERS = {
-    'sqlite': 'spcpil.exporters.SqliteItemExporter'
-}
+FEED_FORMAT = 'jsonlines'
